@@ -14,7 +14,7 @@ BEGIN
     Read(n);
     Write(m);
     Read(m);
-    FOR i FROM 0 TO n-1 STEP step  DO
+    FOR i FROM 0 TO n-1 STEP 1  DO
         Read(set_1[i]);
     END_FOR
     FOR j FROM 0 TO m-1 STEP step  DO
@@ -22,16 +22,16 @@ BEGIN
     END_FOR
     i := 0;
     WHILE (i<n) DO
-        FOR j FROM 0 TO m-1 STEP step  DO
+        FOR j FROM 0 TO m-1 STEP 1  DO
             IF (set_1[i] <> set_2[j]) THEN
                 arr[i] := set_1[i]
              ELSE
                 arr[i] := NULL;
-                i := i + 1;
             END_IF
         END_FOR
+        
     END_WHILE
-    FOR k FROM 0 TO i STEP step  DO
+    FOR k FROM 0 TO i STEP 1  DO
         sum := sum + arr[k];
     END_FOR
     Write(sum);
