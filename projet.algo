@@ -1,0 +1,94 @@
+alg
+//_______________problem_1_____________//
+ALGORITHM the_sum_of_the_elements_an_array
+VAR
+set_1 : ARRAY_OF INTEGER[50];
+set_2 : ARRAY_OF INTEGER[50];
+arr : ARRAY_OF INTEGER[9];
+i,j : INTEGER;
+n,m,k,sum : INTEGER;
+BEGIN
+  k := 0
+  sum := 0
+    Write(n);
+    Read(n);
+    Write(m);
+    Read(m);
+    FOR i FROM 0 TO n-1 STEP step  DO
+        Read(set_1[i]);
+    END_FOR
+    FOR j FROM 0 TO m-1 STEP step  DO
+        Read(set_2[j]);
+    END_FOR
+    i := 0;
+    WHILE (i<n) DO
+        FOR j FROM 0 TO m-1 STEP step  DO
+            IF (set_1[i] <> set_2[j]) THEN
+                arr[i] := set_1[i]
+             ELSE
+                arr[i] := NULL;
+                i := i + 1;
+            END_IF
+        END_FOR
+    END_WHILE
+    FOR k FROM 0 TO i STEP step  DO
+        sum := sum + arr[k];
+    END_FOR
+    Write(sum);
+END
+
+
+//_______________problem_2_____________//
+//Using Procedure.
+PROCEDURE dot_product(n)
+VAR
+    v1,v2 : INTEGER;
+    ps: INTEGER;
+BEGIN
+    Write("v1 and v2 in secc");
+    Read(v1)
+    Read(v2)
+
+    ps := v1 * v2;
+    n := ps%2;
+    IF (n = 0) THEN
+        Write("two vectors of given IR are orthogonal")
+    ELSE
+        Write("two vectors of given IR are not orthogonal")
+    END_IF
+END
+
+ALGORITHM algorithm_name
+VAR
+    n_pair : INTEGER;
+BEGIN
+    // procedure chech is the n pair
+    dot_product(n);
+END
+
+//Using Function.
+FUNCTION dot_productF(ps) : INTEGER
+VAR
+    v1,v2 : INTEGER;
+    ps: INTEGER;
+BEGIN
+    Write("v1 and v2 in secc");
+    Read(v1)
+    Read(v2)
+
+    ps := v1 * v2;
+    RETURN ps ;
+END
+
+ALGORITHM algorithm_name
+VAR
+    n_pair : INTEGER;
+BEGIN
+    n_pair := dot_product(ps)%2
+    IF (n_pair = 0) THEN
+        Write("two vectors of given IR are orthogonal")
+    ELSE
+        Write("two vectors of given IR are not orthogonal")
+    END_IF
+
+END
